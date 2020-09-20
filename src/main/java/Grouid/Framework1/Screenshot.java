@@ -28,6 +28,7 @@ import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 public class Screenshot {
 
 	public static void main(String[] args) throws Exception {
+		
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\RaminduK\\eclipse-workspace\\Framework1\\drivers\\chromedriver.exe");
 		
 		
@@ -40,8 +41,8 @@ public class Screenshot {
 		System.out.println("executing headless browser");
 		driver.manage().window().maximize();
 		driver.findElement(By.xpath("//*[@id=\"strUserName\"]")).sendKeys("RaminduK");
-		System.out.println("element found");
-		//driver.findElement(By.xpath("//*[@id=\"strPassword\"]")).sendKeys(arg0);
+		//System.out.println("element found");
+		driver.findElement(By.xpath("//*[@id=\"strPassword\"]")).sendKeys(arg0);
 		
 		
 		//*[@id="strPassword"]
@@ -61,7 +62,7 @@ public class Screenshot {
 		    //Screenshot scrnshot = new Screenshot();
 		    
 			//ru.yandex.qatools.ashot.Screenshot screenshot =  new AShot().coordsProvider(new WebDriverCoordsProvider()).shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver,logoElement);
-			//ImageIO.write(screenshot.getImage(), “jpg”, new File(“C:\\Users\\RaminduK\\Desktop\\Aotomation\\scrnshot\\image.png”));
+			//ImageIO.write(screenshot.getImage(), â€œjpgâ€�, new File(â€œC:\\Users\\RaminduK\\Desktop\\Aotomation\\scrnshot\\image.pngâ€�));
 			//ImageIO.write(screenshot.getImage(), "png", new File("C:\\Users\\RaminduK\\Desktop\\Aotomation\\scrnshot\\image.png"));
 		
 			/*BufferedImage expectedImage =null; 
@@ -87,7 +88,7 @@ public class Screenshot {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		WebElement downloadbutton = driver.findElement(By.xpath("/html/body/table/tbody/tr[4]/td[2]/a"));
 		String sourceLocation = downloadbutton.getAttribute("href"); 
-		String wget_command = "cmd /c C:\\Users\\RaminduK\\Desktop\\Aotomation\\wget.exe –P D: --no-check-certificate" + sourceLocation;
+		String wget_command = "cmd /c C:\\Users\\RaminduK\\Desktop\\Aotomation\\wget.exe â€“P D: --no-check-certificate" + sourceLocation;
 		try {
 			
 			Process exec = Runtime.getRuntime().exec(wget_command); 
